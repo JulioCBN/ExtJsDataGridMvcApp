@@ -3,3 +3,8 @@ c:\users\wswijaya\documents\visual studio 2010\Projects\ExtJsDataGridMvcApp\ExtJ
 c:\users\wswijaya\documents\visual studio 2010\Projects\ExtJsDataGridMvcApp\ExtJsDataGridMvcApp\obj\Debug\ResolveAssemblyReference.cache
 c:\users\wswijaya\documents\visual studio 2010\Projects\ExtJsDataGridMvcApp\ExtJsDataGridMvcApp\obj\Debug\ExtJsDataGridMvcApp.dll
 c:\users\wswijaya\documents\visual studio 2010\Projects\ExtJsDataGridMvcApp\ExtJsDataGridMvcApp\obj\Debug\ExtJsDataGridMvcApp.pdb
+C:\git-repo\ExtJsDataGridMvcApp\ExtJsDataGridMvcApp\bin\ExtJsDataGridMvcApp.dll
+C:\git-repo\ExtJsDataGridMvcApp\ExtJsDataGridMvcApp\bin\ExtJsDataGridMvcApp.pdb
+C:\git-repo\ExtJsDataGridMvcApp\ExtJsDataGridMvcApp\obj\Debug\ResolveAssemblyReference.cache
+C:\git-repo\ExtJsDataGridMvcApp\ExtJsDataGridMvcApp\obj\Debug\ExtJsDataGridMvcApp.dll
+C:\git-repo\ExtJsDataGridMvcApp\ExtJsDataGridMvcApp\obj\Debug\ExtJsDataGridMvcApp.pdb

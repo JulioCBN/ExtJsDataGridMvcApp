@@ -147,20 +147,23 @@
                         allowBlank: false
                     }
                 },
-                { header: "Birth Date",
+                { xtype: 'datecolumn',
+                    header: "Birth Date",
                     width: 170,
                     sortable: false,
                     dataIndex: 'BirthDate',
-                    format: 'd/m/Y',
-                    renderer: Ext.util.Format.dateRenderer('j/n/Y'),
+                    format: 'j/n/Y',
                     editor: {
                         xtype: 'datefield',
                         allowBlank: true
                     }
                 },
-                { header: "Is Married?",
+                { xtype: 'booleancolumn',
+                    header: "Is Married?",
                     width: 170,
                     sortable: false,
+                    trueText: 'Yes',
+                    falseText: 'No',
                     dataIndex: 'IsMarried',
                     editor: {
                         xtype: 'checkbox'

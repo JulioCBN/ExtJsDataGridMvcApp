@@ -57,6 +57,16 @@
             }, {
                 name: 'Email',
                 type: 'string'
+            }, {
+                name: 'BirthDate',
+                type: 'date',
+                dateFormat: 'M$'
+            }, {
+                name: 'IsMarried',
+                type: 'bool'
+            }, {
+                name: 'NoOfCar',
+                type: 'int'
             }
         ]);
 
@@ -136,12 +146,40 @@
                         xtype: 'textfield',
                         allowBlank: false
                     }
+                },
+                { header: "Birth Date",
+                    width: 170,
+                    sortable: false,
+                    dataIndex: 'BirthDate',
+                    format: 'd/m/Y',
+                    renderer: Ext.util.Format.dateRenderer('j/n/Y'),
+                    editor: {
+                        xtype: 'datefield',
+                        allowBlank: true
+                    }
+                },
+                { header: "Is Married?",
+                    width: 170,
+                    sortable: false,
+                    dataIndex: 'IsMarried',
+                    editor: {
+                        xtype: 'checkbox'
+                    }
+                },
+                { header: "No of Car",
+                    width: 170,
+                    sortable: false,
+                    dataIndex: 'NoOfCar',
+                    editor: {
+                        xtype: 'numberfield',
+                        allowBlank: false
+                    }
                 }
             ],
             plugins: [editor],
             title: 'Contacts DataGrid',
             height: 300,
-            width: 510,
+            width: 1010,
             tbar: [{
                 iconCls: 'icon-user-add',
                 text: 'Add Contact',
@@ -149,7 +187,10 @@
                     var e = new Contact({
                         Name: 'New Friend',
                         Phone: '(65) 89182736',
-                        Email: 'new@google.com'
+                        Email: 'new@google.com',
+                        BirthDate: new Date(),
+                        IsMarried: false,
+                        NoOfCar: 0
                     });
                     editor.stopEditing();
                     store.insert(0, e);
@@ -183,6 +224,6 @@
 
         grid.render('crud-grid');
 
-    });   // end of onReady
+    });    // end of onReady
 
 </script>

@@ -1,6 +1,6 @@
 ﻿<%@ Page Language="C#" Inherits="System.Web.Mvc.ViewPage<dynamic>" %>
 
-<!DOCTYPE html>
+<!-- !DOCTYPE html-->
 
 <html>
 <head runat="server">

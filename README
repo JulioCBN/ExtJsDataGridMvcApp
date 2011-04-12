@@ -4,3 +4,8 @@ Release Notes:
 Dependencies:
 1. ASP.NET MVC 3
 2. Ext JS 3.3.1
+
+Iterations:
+1. Base data grid
+2. Added new fields in the data model to demonstrate input with data type date, boolean & int
+3. Added custom paging toolbar to allow paging using json data as param

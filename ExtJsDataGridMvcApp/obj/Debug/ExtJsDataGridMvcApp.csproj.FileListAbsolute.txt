@@ -1,5 +1,0 @@
-c:\users\wswijaya\documents\visual studio 2010\Projects\ExtJsDataGridMvcApp\ExtJsDataGridMvcApp\bin\ExtJsDataGridMvcApp.dll
-c:\users\wswijaya\documents\visual studio 2010\Projects\ExtJsDataGridMvcApp\ExtJsDataGridMvcApp\bin\ExtJsDataGridMvcApp.pdb
-c:\users\wswijaya\documents\visual studio 2010\Projects\ExtJsDataGridMvcApp\ExtJsDataGridMvcApp\obj\Debug\ResolveAssemblyReference.cache
-c:\users\wswijaya\documents\visual studio 2010\Projects\ExtJsDataGridMvcApp\ExtJsDataGridMvcApp\obj\Debug\ExtJsDataGridMvcApp.dll
-c:\users\wswijaya\documents\visual studio 2010\Projects\ExtJsDataGridMvcApp\ExtJsDataGridMvcApp\obj\Debug\ExtJsDataGridMvcApp.pdb

@@ -19,7 +19,6 @@ namespace ExtJsDataGridMvcApp.Controllers
 
         public JsonResult Load(int? start, int? limit)
         {
-            //just an example to demonstrate paging
             var contact = new List<Contact> { };
             if (start.HasValue && start.Value == 0)
             {

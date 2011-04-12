@@ -352,7 +352,6 @@
     <Content Include="Lib\ext-3.3.1\examples\ux\images\up2.gif" />
     <Content Include="Lib\ext-3.3.1\examples\ux\images\x-grouptabs-corners.gif" />
     <Content Include="Lib\ext-3.3.1\examples\ux\ItemSelector.js" />
-    <Content Include="Lib\ext-3.3.1\examples\ux\JsonPagingToolbar.js" />
     <Content Include="Lib\ext-3.3.1\examples\ux\LockingGridView.js" />
     <Content Include="Lib\ext-3.3.1\examples\ux\MultiSelect.js" />
     <Content Include="Lib\ext-3.3.1\examples\ux\PagingMemoryProxy.js" />
@@ -1264,6 +1263,7 @@
     <Content Include="Lib\ext-3.3.1\resources\images\yourtheme\window\left-right.png" />
     <Content Include="Lib\ext-3.3.1\resources\images\yourtheme\window\right-corners.png" />
     <Content Include="Lib\ext-3.3.1\resources\images\yourtheme\window\top-bottom.png" />
+    <Content Include="Lib\ext-3.3.1\examples\ux\JsonPagingToolbar.js" />
     <Content Include="Views\Contact\Index.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">

@@ -36,7 +36,7 @@
 </head>
 <body>
     <div id="crud-grid"></div>
-    
+
 </body>
 </html>
 

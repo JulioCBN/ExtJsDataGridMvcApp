@@ -4,8 +4,3 @@ Release Notes:
 Dependencies:
 1. ASP.NET MVC 3
 2. Ext JS 3.3.1
-
-Iterations:
-1. Baseline. Created the model and data grid.
-2. Added additional fields of different data type to demonstrate how the data passed to the server-side.
-2. Added custom paging toolbar to handle json data, however the server-side code for paging is not implemented

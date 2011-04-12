@@ -1,6 +1,6 @@
 ﻿<%@ Page Language="C#" Inherits="System.Web.Mvc.ViewPage<dynamic>" %>
 
-<!-- !DOCTYPE html-->
+<!--!DOCTYPE html-->
 
 <html>
 <head runat="server">
@@ -10,9 +10,11 @@
     <link rel="stylesheet" type="text/css" href="/Lib/ext-3.3.1/examples/ux/css/RowEditor.css" />
 	<script language="JavaScript" src="/Lib/ext-3.3.1/adapter/ext/ext-base.js" type="text/javascript"></script>
 	<script language="JavaScript" src="/Lib/ext-3.3.1/ext-all.js" type="text/javascript"></script>
-    <script language="JavaScript" src="/Lib/ext-3.3.1/examples/ux/RowEditor.js" type="text/javascript" =></script>
+    <script language="JavaScript" src="/Lib/ext-3.3.1/examples/ux/RowEditor.js" type="text/javascript"></script>
+    <script language="JavaScript" src="/Lib/ext-3.3.1/examples/ux/JsonPagingToolbar.js" type="text/javascript"></script>
 
 	<style type="text/css">
+	    
         .icon-user-add {
 	        background-image:
 		        url(/Lib/ext-3.3.1/examples/shared/icons/fam/user_add.gif)
@@ -34,16 +36,38 @@
 </head>
 <body>
     <div id="crud-grid"></div>
+    
 </body>
 </html>
 
 <script type="text/javascript">
+    if ((typeof Range !== "undefined") && !Range.prototype.createContextualFragment) {
+        Range.prototype.createContextualFragment = function (html) {
+            var div = document.createElement("div"),
+            fragment = document.createDocumentFragment(),
+            i = 0,
+            length, childNodes;
+
+            div.innerHTML = html;
+            childNodes = div.childNodes;
+            length = childNodes.length;
+
+            for (; i < length; i++) {
+                fragment.appendChild(childNodes[i].cloneNode(true));
+            }
+
+            return fragment;
+        };
+    }
+
     if (Ext.BLANK_IMAGE_URL.substr(0, 5) != 'data:') {
         Ext.BLANK_IMAGE_URL = '/Lib/ext-3.3.1/resources/images/default/s.gif';
     }
 
 
     Ext.onReady(function () {
+        Ext.QuickTips.init();
+
         var Contact = Ext.data.Record.create([
             {
                 name: 'Id',
@@ -90,8 +114,8 @@
                 create: '/Contact/Create',
                 update: '/Contact/Update',
                 destroy: '/Contact/Delete'
-            },
-            headers: { 'Content-Type': 'application/json; charset=UTF-8' }
+            }
+            , headers: { 'Content-Type': 'application/json; charset=UTF-8' }
         });
 
         var store = new Ext.data.Store({
@@ -102,7 +126,7 @@
             autoSave: false // <-- false would delay executing create, update, destroy requests until specifically told to do so with some [save] buton.
         });
 
-        store.load();
+        store.load({ params: Ext.util.JSON.encode({ start: 0, limit: 2 }) });
 
         Ext.data.DataProxy.addListener('exception', function (proxy, type, action, options, res) {
             Ext.Msg.show({
@@ -144,23 +168,25 @@
                     dataIndex: 'Email',
                     editor: {
                         xtype: 'textfield',
-                        allowBlank: false
+                        allowBlank: false,
+                        vtype: 'email'
                     }
                 },
                 { xtype: 'datecolumn',
                     header: "Birth Date",
                     width: 170,
-                    sortable: false,
+                    sortable: true,
                     dataIndex: 'BirthDate',
                     format: 'j/n/Y',
                     editor: {
                         xtype: 'datefield',
-                        allowBlank: true
+                        allowBlank: false
                     }
                 },
                 { xtype: 'booleancolumn',
                     header: "Is Married?",
                     width: 170,
+                    align: 'center',
                     sortable: false,
                     trueText: 'Yes',
                     falseText: 'No',
@@ -219,6 +245,15 @@
                     store.save();
                 }
             }]
+            ,
+            // paging bar on the bottom
+            bbar: new Ext.ux.JsonPagingToolbar({
+                pageSize: 2,
+                store: store,
+                displayInfo: true,
+                displayMsg: 'Displaying topics {0} - {1} of {2}',
+                emptyMsg: "No topics to display"
+            })
         });
 
         grid.getSelectionModel().on('selectionchange', function (sm) {
@@ -226,7 +261,6 @@
         });
 
         grid.render('crud-grid');
-
-    });    // end of onReady
+    });             // end of onReady
 
 </script>

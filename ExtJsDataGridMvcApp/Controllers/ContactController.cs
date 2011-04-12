@@ -17,17 +17,28 @@ namespace ExtJsDataGridMvcApp.Controllers
             return View();
         }
 
-        public JsonResult Load()
+        public JsonResult Load(int? start, int? limit)
         {
-            var contact = new List<Contact> {
-                new Contact("Smith","95746325","smith@me.com", new DateTime(1977,1, 14), false, 2),
-                new Contact("Adam","87291034","adam@me.com", new DateTime(1976,8, 14), false, 0),
-                new Contact("Eve","98271345","eve@me.com", new DateTime(1975,5, 14), false, 1),
-                new Contact("Chun Li","81728312","chun.li@me.com", new DateTime(1979,10, 14), true, 1)
-            };
+            //just an example to demonstrate paging
+            var contact = new List<Contact> { };
+            if (start.HasValue && start.Value == 0)
+            {
+                contact = new List<Contact> {
+                    new Contact("Smith","95746325","smith@me.com", new DateTime(1977,1, 14), false, 2)
+                    ,new Contact("Adam","87291034","adam@me.com", new DateTime(1976,8, 14), false, 0)
+                };
+            }
+            else if (start.HasValue && start.Value == 2)
+            {
+                contact = new List<Contact> {
+                    new Contact("Eve","98271345","eve@me.com", new DateTime(1975,5, 14), false, 1)
+                    ,new Contact("Chun Li","81728312","chun.li@me.com", new DateTime(1979,10, 14), true, 1)
+                };
+            }
+
             return Json(new
             {
-                total = contact.Count,
+                total = 4,
                 data = contact,
             }, JsonRequestBehavior.AllowGet);
         }
@@ -47,6 +58,7 @@ namespace ExtJsDataGridMvcApp.Controllers
         [HttpPost]
         public JsonResult Update(List<Contact> data)
         {
+            Console.WriteLine(data[0].BirthDate);
             //insert Update code
             return Json(new
             {

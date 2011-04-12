@@ -14,6 +14,7 @@
     <AssemblyName>ExtJsDataGridMvcApp</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>false</UseIISExpress>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -351,6 +352,7 @@
     <Content Include="Lib\ext-3.3.1\examples\ux\images\up2.gif" />
     <Content Include="Lib\ext-3.3.1\examples\ux\images\x-grouptabs-corners.gif" />
     <Content Include="Lib\ext-3.3.1\examples\ux\ItemSelector.js" />
+    <Content Include="Lib\ext-3.3.1\examples\ux\JsonPagingToolbar.js" />
     <Content Include="Lib\ext-3.3.1\examples\ux\LockingGridView.js" />
     <Content Include="Lib\ext-3.3.1\examples\ux\MultiSelect.js" />
     <Content Include="Lib\ext-3.3.1\examples\ux\PagingMemoryProxy.js" />

@@ -283,13 +283,14 @@ Ext.ux.JsonPagingToolbar = Ext.extend(Ext.Toolbar, {
             return;
         }
         var p = this.getParams();
-        var tparams;
+        //console.log('onLoad | o: ' + o.params);
+        
         if (o.params) {
             tparams = Ext.util.JSON.decode(o.params);
-            this.cursor = (tparams && tparams[p.start]) ? tparams[p.start] : 0;
-        } else {
-            this.cursor = (o.params && o.params[p.start]) ? o.params[p.start] : 0;
+            if (tparams) this.cursor = (tparams && tparams[p.start]) ? tparams[p.start] : 0;
+            else this.cursor = (o.params && o.params[p.start]) ? o.params[p.start] : 0;
         }
+        //console.log('onLoad | this.cursor: ' + this.cursor);
         var d = this.getPageData(), ap = d.activePage, ps = d.pages;
 
         this.afterTextItem.setText(String.format(this.afterPageText, d.pages));
@@ -306,6 +307,7 @@ Ext.ux.JsonPagingToolbar = Ext.extend(Ext.Toolbar, {
     // private
     getPageData: function () {
         var total = this.store.getTotalCount();
+        //console.log('getPageData | activePage: ' + Math.ceil((this.cursor + this.pageSize) / this.pageSize));
         return {
             total: total,
             activePage: Math.ceil((this.cursor + this.pageSize) / this.pageSize),
